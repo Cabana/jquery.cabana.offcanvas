@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <title>Off Canvas nav example: basic</title>
+    <title>Off Canvas nav example: toggle</title>
 
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/foundation/4.3.2/css/normalize.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/foundation/4.3.2/css/foundation.min.css">
@@ -26,9 +26,11 @@
     <script>
         $(document).ready(function () {
 
-            $(document).offcanvas({
-                navOpenBtn: '.nav-open-btn',
-                navCloseBtn: '.nav-close-btn'
+            $(document).offcanvas();
+
+            // Trigger nav open/close programatically
+            $('.toggle-nav').on('click', function (e) {
+                $(document).offcanvas('toggleNav', e);
             });
 
         });
@@ -41,7 +43,7 @@
             <div class="small-12 columns">
                 <h3 class="subheader">Off Canvas Container</h3>
                 <p>Etiam ut varius metus. Nam eu dui eget justo tempor tincidunt ac id tortor. Pellentesque at quam in tellus bibendum dapibus sit amet in quam. Aenean erat risus, pretium in fringilla id, molestie venenatis eros. Etiam molestie sapien ac felis suscipit venenatis. Quisque facilisis arcu ac turpis condimentum faucibus. Suspendisse elementum dolor enim, sed luctus lorem eleifend semper. Integer elementum volutpat nulla, non elementum eros faucibus quis. In sit amet pretium leo.</p>
-                <p><a href="#" class="button secondary small nav-close-btn">Close Nav</a></p>
+                <p><a href="#" class="button secondary small toggle-nav">Toggle</a></p>
             </div>
         </div>       
     </div>
@@ -54,7 +56,7 @@
 
             <h1>Treasure Island</h1>
 
-            <p><a class="nav-open-btn button small">Open Nav</a></p>
+            <p><a href="#" class="button small toggle-nav">Toggle</a></p>
 
             <p><a name="id380362"><!--anchor--></a>SQUIRE TRELAWNEY, Dr. Livesey, and the rest of these gentlemen having
             asked me to write down the whole particulars about Treasure Island, from

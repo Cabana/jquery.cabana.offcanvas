@@ -163,6 +163,7 @@
             }
             if (e) {
                 e.preventDefault();
+                e.stopPropagation();
             }
         },
 
@@ -186,13 +187,11 @@
 
             $(this.options.navOpenBtn).on('click', function (event) {
                 event.stopPropagation();
-                //$(document).offcanvas('toggleNav', event);
                 _base.toggleNav(event);
             });
 
             $(this.options.navCloseBtn).on('click', function (event) {
                 event.stopPropagation();
-                //$(document).offcanvas('toggleNav', event);
                 _base.toggleNav(event);
             });
 
